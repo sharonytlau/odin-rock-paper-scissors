@@ -1,0 +1,204 @@
+:root {
+  --font-Family-sans: Catamaran, Montserrat, "Segoe UI", Roboto, Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --fontFamily-serif: Arvo, Merriweather, "Georgia", Cambria, "Times New Roman", Times, serif;
+  --fontSize-root: 25px;
+  --fontSize-1: 1rem;
+  --fontSize-2: 2rem;
+  --fontSize-3: 3rem;
+  --fontSize-4: 4rem;
+  --fontSize-5: 5rem;
+  --borderRadius: 0.3rem;
+  --spacing-1: 0.5rem;
+  --spacing-2: 1rem;
+  --spacing-3: 1.5rem;
+  --maxWidth-1: 20rem;
+  --minWidth-1: 5rem;
+  --minWidth-2: 20rem;
+  --minWidth-3: 30rem;
+  --minWidth-4: 40rem;
+  --color-light-gray: #f4f4f4;
+  --color-dark-gray: #e3e3e3;
+  --color-primary: #1b1b1b;
+  --color-primary-light:  #8d8d8d;
+}
+
+html{
+  font-size: var(--fontSize-root);
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  color: var(--color-primary);
+  font-family: var(--font-Family-sans);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: var(--spacing-2);
+  font-size: var(--fontSize-2);
+  /* min-width: var(--minWidth-4); */
+  width: fit-content;
+}
+
+
+#title{
+  font-family: var(--fontFamily-serif);
+  margin-bottom: 0px;
+  white-space: nowrap;
+}
+
+.selection-row,
+#selection-btns,
+#computer-selection,
+.btn-selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--fontSize-4);
+}
+
+.selection-row {
+  min-width: var(--minWidth-3);
+}
+
+.push{
+  margin-right:auto;
+}
+
+.btn-selection,
+#computer-selection
+{
+  border: 5px solid var(--color-dark-gray);
+  width: var(--fontSize-5);
+  height: var(--fontSize-5);
+  box-sizing: content-box;
+  padding: var(--spacing-1);
+  margin: var(--spacing-1); 
+  background-color: var(--color-light-gray);
+}
+
+.btn-selection:hover {
+  background-color: var(--color-primary);
+  border: 5px solid black;
+}
+
+.btn-selection:active {
+  border: 5px solid var(--color-dark-gray);
+  background-color: var(--color-primary-light);
+}
+
+.btn-selection:focus{
+  background-color: var(--color-primary-light);
+}
+
+#title-row{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+#score-board{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: var(--color-light-gray);
+  padding: var(--spacing-1);
+}
+
+#restart-btn{
+  align-self: flex-end;
+  font-size: var(--fontSize-1);
+  border-radius: var(--borderRadius);
+  background-color: var(--color-light-gray);
+}
+
+#restart-btn:hover{
+  background-color: var(--color-primary);
+  color: white;
+}
+
+#restart-btn:active{
+  background-color: var(--color-light-gray);
+  color: var(--color-primary);
+}
+  
+
+.score{
+  margin: 0 2rem;
+}
+
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  /* height: 100%; */
+  visibility: hidden;
+  /* background-color: var(--color-light-gray); */
+  border: 3px solid var(--color-primary);
+  color: var(--color-primary);
+  text-align: center;
+  border-radius: var(--borderRadius);
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  top: -50%;
+  right: 115%;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 100%; /* To the right of the tooltip */
+  margin-top: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip {
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+}
+
+.tooltiptext {
+  min-width: var(--minWidth-1);
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: var(--fontSize-1);
+  line-height: 120%;
+  background-color: var(--color-light-gray);
+}
+
+.fas::before {
+  font-size: var(--fontSize-3);
+  color: var(--color-primary);
+}
+
+.fas:hover::before {
+  color: var(--color-dark-gray);
+}

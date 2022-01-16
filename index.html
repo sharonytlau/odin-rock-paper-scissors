@@ -4,8 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Catamaran|Arvo|Merriweather|Montserrat">
+  <script src="./script.js" defer></script>
+  <script src="https://kit.fontawesome.com/d1b2cc5e5b.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <script src="./script.js"></script>
+  <div id="title-row">
+    <h1 id="title"> Rock Paper Scissors </h1>
+    <button id="restart-btn"> Restart Game </button>
+  </div>
+
+  <div class="selection-row">
+    <span id="avatar" class="push"> 😀 </span>
+    <div id="selection-btns">
+      <button id="rock" class="btn-selection"> ✊ </button>
+      <button id="paper" class="btn-selection"> 🖐 </button>
+      <button id="scissors" class="btn-selection"> ✌ </button>
+    </div>
+  </div>
+  
+  <div class="selection-row">
+    <span class="push"> 🖥️ </span>
+    <div id="computer-selection"></div>
+  </div>
+  
+  <div id="score-board">
+    <div id="score-player" class="score"></div>
+    <span> : </span>
+    <div id="score-computer" class="score"></div>
+    <div id="game-result" class="result"></div>
+  </div>
+
+  <div class="tooltip"> <i class="fas fa-info-circle"></i>
+    <span class="tooltiptext"> Score 5 to win the game!</span>
+  </div>
+
 </body>
 </html>
