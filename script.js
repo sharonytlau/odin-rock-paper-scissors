@@ -151,7 +151,7 @@ function game(e){
       playerAvatar.textContent = '😊';
       resultDiv.textContent = "You win!";
     } else {
-      playerAvatar.textContent = '🥲';
+      playerAvatar.textContent = '😵';
       resultDiv.textContent = "Computer wins!";
     } 
 
