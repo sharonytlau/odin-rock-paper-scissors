@@ -1,7 +1,7 @@
 :root {
   --font-Family-sans: Catamaran, Montserrat, "Segoe UI", Roboto, Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --fontFamily-serif: Arvo, Merriweather, "Georgia", Cambria, "Times New Roman", Times, serif;
-  --fontSize-root: 25px;
+  --fontSize-root: 24px;
   --fontSize-1: 1rem;
   --fontSize-2: 2rem;
   --fontSize-3: 3rem;
@@ -11,6 +11,7 @@
   --spacing-1: 0.5rem;
   --spacing-2: 1rem;
   --spacing-3: 1.5rem;
+  --spacing-4: 3.5rem;
   --maxWidth-1: 20rem;
   --minWidth-1: 5rem;
   --minWidth-2: 20rem;
@@ -22,6 +23,7 @@
   --color-primary-light:  #8d8d8d;
 }
 
+
 html{
   font-size: var(--fontSize-root);
   display: flex;
@@ -29,6 +31,7 @@ html{
 }
 
 body {
+  height: 80vh;
   color: var(--color-primary);
   font-family: var(--font-Family-sans);
   display: flex;
@@ -37,7 +40,6 @@ body {
   justify-content: center;
   row-gap: var(--spacing-2);
   font-size: var(--fontSize-2);
-  /* min-width: var(--minWidth-4); */
   width: fit-content;
 }
 
@@ -97,8 +99,6 @@ body {
   flex-direction: column;
 }
 
-
-
 #score-board{
   width: 100%;
   display: flex;
@@ -131,16 +131,13 @@ body {
 }
 
 
-/* Tooltip container */
+/* Tooltip */
 .tooltip {
   position: relative;
 }
 
-/* Tooltip text */
 .tooltip .tooltiptext {
-  /* height: 100%; */
   visibility: hidden;
-  /* background-color: var(--color-light-gray); */
   border: 3px solid var(--color-primary);
   color: var(--color-primary);
   text-align: center;
@@ -157,19 +154,6 @@ body {
   transition: opacity 0.3s;
 }
 
-/* Tooltip arrow */
-.tooltip .tooltiptext::after {
-  content: " ";
-  position: absolute;
-  top: 50%;
-  left: 100%; /* To the right of the tooltip */
-  margin-top: -5px;
-  border-width: 10px;
-  border-style: solid;
-  border-color: transparent transparent transparent black;
-}
-
-/* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
@@ -194,6 +178,18 @@ body {
   background-color: var(--color-light-gray);
 }
 
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 100%; /* To the right of the tooltip */
+  margin-top: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
+}
+
 .fas::before {
   font-size: var(--fontSize-3);
   color: var(--color-primary);
@@ -201,4 +197,39 @@ body {
 
 .fas:hover::before {
   color: var(--color-dark-gray);
+}
+
+/* Media Queries */
+
+@media only screen and (min-width: 1025px) and (max-width: 1368px) {
+  :root {--fontSize-root: 18px;}
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+  :root {--fontSize-root: 12px;}
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+  :root {--fontSize-root: 16px;}
+}
+
+@media only screen and (min-width: 481px) and (max-width:768px) and (orientation: landscape) {
+  :root {--fontSize-root: 10px;}
+}
+
+@media only screen and (min-width: 481px) and (max-width:768px) and (orientation: portrait) {
+  :root {--fontSize-root: 12px;}
+}
+
+@media only screen and (min-width: 320px) and (max-width:480px) {
+  :root {--fontSize-root: 8px;}
+}
+
+@media only screen and (max-width:319px) {
+  :root {--fontSize-root: 6px;}
+}
+
+@media only screen and (orientation: portrait) {
+  body {row-gap: var(--spacing-4);}
+  #restart-btn {margin-top: var(--spacing-1);}
 }
